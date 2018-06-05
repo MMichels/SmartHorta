@@ -1,0 +1,72 @@
+==============================Bem Vindo=====================================
+	Este é um pequeno programa de exemplo para comunicação entre arduino e 
+computador utilizando a programação em Java, fazendo uso da biblioteca
+RxTxComm
+	Neste projeto estao inclusos biblioteca, codigos e exemplos para
+realizar a comunicação serial entre o arduino e o pc, e exibir os
+dados com o auxilio da programação em java, que permite manipular
+os dados recebidos da maneira desejada.
+=============================================================================
+Considerando que ja possui instalado o ambiente de desenvolvimento
+java JDK SE e o NetBeans em seu computador, prossiga.
+
+1º passo:
+	-Verifique se seu sistema é 32 ou 64bits.
+	-Acesse a pasta "Arquivos para funcionamento\"
+	-Acesse a pasta com os arquivos correspondentes ao seu sistema
+	-Copie o Arquivo rxtxSerial.dll para as pastas:
+			C:\Program Files\Java\jdk(versao)\bin
+			C:\Program Files\Java\jre(versao)\bin
+			C:\Windows\System32
+			Apenas sistemas 64bits:
+			C:\Windows\SysWOW64
+2º passo: 
+	-Abra o NetBeans
+	-Acesse o menu Arquivo>Abrir projeto
+	-Procure pela pasta "Projeto NetBeans contido neste arquivo .zip
+	-Abra o projeto
+	-Sera aberto com o nome "ComArduinoJava2
+
+Considerações: 
+	-O arquivo main.java é o programa rodando em um terminal, sem interface
+	grafica, apenas "recebe" dados do arduino(verifique abaixo instruções 
+	para enviar	dados para o arduino).
+	
+	-o Arquivo tela.java é um exemplo de tela utilizando Swing, envia
+	e recebe resposta do arduino.
+	
+	-o arquivo "SerialComLeitura.java" é o arquivo de comunicação 
+	principal do programa, nele estao as funcoes para fazer uso da biblioteca
+	RxTxComm.
+	
+	-o aquivo "SerialCom.java" possui a funcao de listar as portas seriais
+	do computador e verificar se a porta escolhida para a conexão existe.
+	
+	-A pasta "exemplo s Sketch" contida neste Download Possui dois exemplos 
+	de Sketch para o arduino, um apenas de leitura, e outro de chamada e 
+	resposta.
+	
+Exemplo de codigo para enviar dados usando o arquivo main.java
+
+Adicione as seguintes linhas: 
+
+	String Enviar;
+			Enviar = "String a ser enviada"+\n;
+            funcEscritaSerial(Enviar);
+
+IMPORTANTE: Lembresse que o arduino deve estar rodando um Sketch capaz de
+interpretar os dados enviados, e tambem capaz de responder por cada chamada.
+
+MAIS IMPORTANTE AINDA: 	Comunicação Serial demanda "tempo", em millisegundos,
+obviamente, mas ainda assim é tempo, se dados chegarem pela metade ou a conexão
+travar, ou ate mesmo o programa travar, verifique o tempo entre os envios e recebimento
+de informações, tanto no Sketch quanto no programa Java.
+=======================================================================================
+Referencias e demais informações: 
+	"Utilizando a API RXTX para manipulação da serial"
+		https://www.devmedia.com.br/utilizando-a-api-rxtx-para-manipulacao-da-serial-parte-i/6722
+	"Comunicação Serial Java + Arduino"
+		https://www.embarcados.com.br/comunicacao-serial-java-arduino/
+		
+	"RxTx WIKI"
+		http://rxtx.qbang.org/wiki/index.php/Main_Page
